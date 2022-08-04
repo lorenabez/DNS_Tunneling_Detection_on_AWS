@@ -7,7 +7,7 @@ Describes an architecture for DNS Tunneling detection at AWS cloud envirement, u
   - from DNS resolver  (EC2 instance) on private subnetwork -> Packetbeat (ELK beat)
 2. Machine Learning Model:
   - Features analysis and extraction for Machine Learning (ML) jobs;
-  - definition of relevant influencer fields and detectors;
+  - Definition of relevant influencer fields and detectors;
   - ML model for anomaly detection -> Population Analysis Elastic ML Model
 3. DNS tunneling tools tests:
   - Iodine
