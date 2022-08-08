@@ -1,0 +1,161 @@
+{
+  "job_id": "flow",
+  "job_type": "anomaly_detector",
+  "job_version": "8.3.3",
+  "create_time": 1659913289038,
+  "finished_time": 1659966829061,
+  "model_snapshot_id": "1659966827",
+  "custom_settings": {
+    "created_by": "population-wizard"
+  },
+  "datafeed_config": {
+    "datafeed_id": "datafeed-flow",
+    "job_id": "flow",
+    "query_delay": "112504ms",
+    "chunking_config": {
+      "mode": "auto"
+    },
+    "indices_options": {
+      "expand_wildcards": [
+        "open"
+      ],
+      "ignore_unavailable": false,
+      "allow_no_indices": true,
+      "ignore_throttled": true
+    },
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_all": {}
+          }
+        ]
+      }
+    },
+    "indices": [
+      "filebeat-*"
+    ],
+    "scroll_size": 1000,
+    "delayed_data_check_config": {
+      "enabled": true
+    },
+    "state": "stopped",
+    "timing_stats": {
+      "job_id": "flow",
+      "search_count": 7257,
+      "bucket_count": 16521,
+      "total_search_time_ms": 90538,
+      "average_search_time_per_bucket_ms": 5.480176744749107,
+      "exponential_average_search_time_per_hour_ms": 10.574708188223733
+    }
+  },
+  "groups": [
+    "mestrado"
+  ],
+  "description": "",
+  "analysis_config": {
+    "bucket_span": "15m",
+    "detectors": [
+      {
+        "detector_description": "high_count over \"destination.ip\"",
+        "function": "high_count",
+        "over_field_name": "destination.ip",
+        "detector_index": 0
+      },
+      {
+        "detector_description": "high_sum(\"network.bytes\") over \"destination.ip\"",
+        "function": "high_sum",
+        "field_name": "network.bytes",
+        "over_field_name": "destination.ip",
+        "detector_index": 1
+      },
+      {
+        "detector_description": "distinct_count(\"source.ip\") over \"destination.ip\"",
+        "function": "distinct_count",
+        "field_name": "source.ip",
+        "over_field_name": "destination.ip",
+        "detector_index": 2
+      }
+    ],
+    "influencers": [
+      "destination.top_level_domain",
+      "destination.ip"
+    ],
+    "model_prune_window": "30d"
+  },
+  "analysis_limits": {
+    "model_memory_limit": "58mb",
+    "categorization_examples_limit": 4
+  },
+  "data_description": {
+    "time_field": "@timestamp",
+    "time_format": "epoch_ms"
+  },
+  "model_plot_config": {
+    "enabled": false,
+    "annotations_enabled": false
+  },
+  "model_snapshot_retention_days": 10,
+  "daily_model_snapshot_retention_after_days": 1,
+  "results_index_name": "shared",
+  "allow_lazy_open": false,
+  "data_counts": {
+    "job_id": "flow",
+    "processed_record_count": 6896701,
+    "processed_field_count": 20689029,
+    "input_bytes": 750312450,
+    "input_field_count": 20689029,
+    "invalid_date_count": 0,
+    "missing_field_count": 6897775,
+    "out_of_order_timestamp_count": 0,
+    "empty_bucket_count": 13903,
+    "sparse_bucket_count": 17,
+    "bucket_count": 16521,
+    "earliest_record_timestamp": 1644233676000,
+    "latest_record_timestamp": 1659103169000,
+    "last_data_time": 1659966824382,
+    "latest_empty_bucket_timestamp": 1659094200000,
+    "latest_sparse_bucket_timestamp": 1654686000000,
+    "input_record_count": 6896701,
+    "log_time": 1659966824382,
+    "latest_bucket_timestamp": 1659102300000
+  },
+  "model_size_stats": {
+    "job_id": "flow",
+    "result_type": "model_size_stats",
+    "model_bytes": 23776216,
+    "peak_model_bytes": 35788236,
+    "model_bytes_exceeded": 0,
+    "model_bytes_memory_limit": 60817408,
+    "total_by_field_count": 5,
+    "total_over_field_count": 40017,
+    "total_partition_field_count": 4,
+    "bucket_allocation_failures_count": 0,
+    "memory_status": "ok",
+    "assignment_memory_basis": "current_model_bytes",
+    "categorized_doc_count": 0,
+    "total_category_count": 0,
+    "frequent_category_count": 0,
+    "rare_category_count": 0,
+    "dead_category_count": 0,
+    "failed_category_count": 0,
+    "categorization_status": "ok",
+    "log_time": 1659966827705,
+    "timestamp": 1659101400000
+  },
+  "forecasts_stats": {
+    "total": 0,
+    "forecasted_jobs": 0
+  },
+  "state": "closed",
+  "timing_stats": {
+    "job_id": "flow",
+    "bucket_count": 16521,
+    "total_bucket_processing_time_ms": 33683.99999999995,
+    "minimum_bucket_processing_time_ms": 0,
+    "maximum_bucket_processing_time_ms": 1968,
+    "average_bucket_processing_time_ms": 2.0388596331941136,
+    "exponential_average_bucket_processing_time_ms": 1.3073971219355054,
+    "exponential_average_bucket_processing_time_per_hour_ms": 24.395663469016455
+  }
+}
