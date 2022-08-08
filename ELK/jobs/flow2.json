@@ -1,0 +1,58 @@
+{
+  "job_id": "flow2",
+  "description": "",
+  "groups": [
+    "mestrado"
+  ],
+  "analysis_config": {
+    "bucket_span": "15m",
+    "detectors": [
+      {
+        "function": "high_count",
+        "over_field_name": "destination.ip"
+      },
+      {
+        "function": "max",
+        "field_name": "network.bytes",
+        "over_field_name": "destination.ip"
+      },
+      {
+        "function": "max",
+        "field_name": "source.bytes",
+        "over_field_name": "destination.ip"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "source.port",
+        "over_field_name": "destination.ip"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "destination.port",
+        "over_field_name": "destination.ip"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "source.ip",
+        "over_field_name": "destination.ip"
+      }
+    ],
+    "influencers": [
+      "destination.ip",
+      "source.ip"
+    ]
+  },
+  "data_description": {
+    "time_field": "@timestamp"
+  },
+  "custom_settings": {
+    "created_by": "population-wizard"
+  },
+  "analysis_limits": {
+    "model_memory_limit": "66MB"
+  },
+  "model_plot_config": {
+    "enabled": false,
+    "annotations_enabled": false
+  }
+}
