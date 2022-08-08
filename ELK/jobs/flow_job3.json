@@ -1,0 +1,160 @@
+{
+  "job_id": "flow3",
+  "job_type": "anomaly_detector",
+  "job_version": "8.3.3",
+  "create_time": 1659988133275,
+  "finished_time": 1659988151203,
+  "model_snapshot_id": "1659988150",
+  "custom_settings": {
+    "created_by": "population-wizard"
+  },
+  "datafeed_config": {
+    "datafeed_id": "datafeed-flow3",
+    "job_id": "flow3",
+    "query_delay": "67162ms",
+    "chunking_config": {
+      "mode": "auto"
+    },
+    "indices_options": {
+      "expand_wildcards": [
+        "open"
+      ],
+      "ignore_unavailable": false,
+      "allow_no_indices": true,
+      "ignore_throttled": true
+    },
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_all": {}
+          }
+        ]
+      }
+    },
+    "indices": [
+      "packetbeat-*"
+    ],
+    "scroll_size": 1000,
+    "delayed_data_check_config": {
+      "enabled": true
+    },
+    "state": "stopped",
+    "timing_stats": {
+      "job_id": "flow3",
+      "search_count": 1146,
+      "bucket_count": 748,
+      "total_search_time_ms": 8399,
+      "average_search_time_per_bucket_ms": 11.22860962566845,
+      "exponential_average_search_time_per_hour_ms": 56.959718724016184
+    }
+  },
+  "groups": [
+    "mestrado"
+  ],
+  "description": "",
+  "analysis_config": {
+    "bucket_span": "15m",
+    "detectors": [
+      {
+        "detector_description": "max(\"event.duration\") over \"dns.question.etld_plus_one\"",
+        "function": "max",
+        "field_name": "event.duration",
+        "over_field_name": "dns.question.etld_plus_one",
+        "detector_index": 0
+      },
+      {
+        "detector_description": "max(bytes_in) over \"dns.question.etld_plus_one\"",
+        "function": "max",
+        "field_name": "bytes_in",
+        "over_field_name": "dns.question.etld_plus_one",
+        "detector_index": 1
+      },
+      {
+        "detector_description": "max(bytes_out) over \"dns.question.etld_plus_one\"",
+        "function": "max",
+        "field_name": "bytes_out",
+        "over_field_name": "dns.question.etld_plus_one",
+        "detector_index": 2
+      }
+    ],
+    "influencers": [
+      "dns.question.etld_plus_one"
+    ],
+    "model_prune_window": "30d"
+  },
+  "analysis_limits": {
+    "model_memory_limit": "34mb",
+    "categorization_examples_limit": 4
+  },
+  "data_description": {
+    "time_field": "@timestamp",
+    "time_format": "epoch_ms"
+  },
+  "model_plot_config": {
+    "enabled": false,
+    "annotations_enabled": false
+  },
+  "model_snapshot_retention_days": 10,
+  "daily_model_snapshot_retention_after_days": 1,
+  "results_index_name": "shared",
+  "allow_lazy_open": false,
+  "data_counts": {
+    "job_id": "flow3",
+    "processed_record_count": 1033831,
+    "processed_field_count": 3201858,
+    "input_bytes": 93102826,
+    "input_field_count": 3201858,
+    "invalid_date_count": 0,
+    "missing_field_count": 933466,
+    "out_of_order_timestamp_count": 0,
+    "empty_bucket_count": 685,
+    "sparse_bucket_count": 2,
+    "bucket_count": 748,
+    "earliest_record_timestamp": 1659315570000,
+    "latest_record_timestamp": 1659988144729,
+    "last_data_time": 1659988150648,
+    "latest_empty_bucket_timestamp": 1659951900000,
+    "latest_sparse_bucket_timestamp": 1659813300000,
+    "input_record_count": 1033831,
+    "log_time": 1659988150648,
+    "latest_bucket_timestamp": 1659987900000
+  },
+  "model_size_stats": {
+    "job_id": "flow3",
+    "result_type": "model_size_stats",
+    "model_bytes": 36900912,
+    "peak_model_bytes": 44375878,
+    "model_bytes_exceeded": 294992,
+    "model_bytes_memory_limit": 35651584,
+    "total_by_field_count": 5,
+    "total_over_field_count": 10611,
+    "total_partition_field_count": 4,
+    "bucket_allocation_failures_count": 28,
+    "memory_status": "hard_limit",
+    "assignment_memory_basis": "current_model_bytes",
+    "categorized_doc_count": 0,
+    "total_category_count": 0,
+    "frequent_category_count": 0,
+    "rare_category_count": 0,
+    "dead_category_count": 0,
+    "failed_category_count": 0,
+    "categorization_status": "ok",
+    "log_time": 1659988150784,
+    "timestamp": 1659987000000
+  },
+  "forecasts_stats": {
+    "total": 0,
+    "forecasted_jobs": 0
+  },
+  "state": "closed",
+  "timing_stats": {
+    "job_id": "flow3",
+    "bucket_count": 748,
+    "total_bucket_processing_time_ms": 3159.9999999999986,
+    "minimum_bucket_processing_time_ms": 0,
+    "maximum_bucket_processing_time_ms": 412,
+    "average_bucket_processing_time_ms": 4.224598930481282,
+    "exponential_average_bucket_processing_time_ms": 16.17135331744272,
+    "exponential_average_bucket_processing_time_per_hour_ms": 71.545470034874
+  }
