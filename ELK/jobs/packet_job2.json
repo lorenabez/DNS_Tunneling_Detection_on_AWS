@@ -1,0 +1,73 @@
+{
+  "job_id": "packet2",
+  "description": "",
+  "groups": [
+    "mestrado"
+  ],
+  "analysis_config": {
+    "bucket_span": "15m",
+    "detectors": [
+      {
+        "function": "high_count",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.question.name",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.question.subdomain",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.id",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "high_mean",
+        "field_name": "dns.answers_count",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.answers.ttl",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.answers.name",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "distinct_count",
+        "field_name": "dns.answers.type",
+        "over_field_name": "dns.question.etld_plus_one"
+      },
+      {
+        "function": "high_mean",
+        "field_name": "dns.opt.udp_size",
+        "over_field_name": "dns.question.etld_plus_one"
+      }
+    ],
+    "influencers": [
+      "dns.question.etld_plus_one",
+      "dns.question.top_level_domain"
+    ]
+  },
+  "data_description": {
+    "time_field": "@timestamp"
+  },
+  "custom_settings": {
+    "created_by": "population-wizard"
+  },
+  "analysis_limits": {
+    "model_memory_limit": "111MB"
+  },
+  "model_plot_config": {
+    "enabled": false,
+    "annotations_enabled": false
+  }
+}
