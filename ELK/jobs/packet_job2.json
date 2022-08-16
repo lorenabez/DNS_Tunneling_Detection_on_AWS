@@ -10,8 +10,8 @@
     "custom_urls": []
   },
   "datafeed_config": {
-    "datafeed_id": "datafeed-packet4",
-    "job_id": "packet4",
+    "datafeed_id": "datafeed-packet2",
+    "job_id": "packet2",
     "query_delay": "94862ms",
     "chunking_config": {
       "mode": "auto"
@@ -42,7 +42,7 @@
     },
     "state": "stopped",
     "timing_stats": {
-      "job_id": "packet4",
+      "job_id": "packet2",
       "search_count": 1335,
       "bucket_count": 1049,
       "total_search_time_ms": 15373,
