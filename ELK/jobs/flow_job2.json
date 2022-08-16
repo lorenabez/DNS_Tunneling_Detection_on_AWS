@@ -9,8 +9,8 @@
     "created_by": "population-wizard"
   },
   "datafeed_config": {
-    "datafeed_id": "datafeed-flow3",
-    "job_id": "flow3",
+    "datafeed_id": "datafeed-flow2",
+    "job_id": "flow2",
     "query_delay": "67162ms",
     "chunking_config": {
       "mode": "auto"
@@ -41,7 +41,7 @@
     },
     "state": "stopped",
     "timing_stats": {
-      "job_id": "flow3",
+      "job_id": "flow2",
       "search_count": 1146,
       "bucket_count": 748,
       "total_search_time_ms": 8399,
@@ -100,7 +100,7 @@
   "results_index_name": "shared",
   "allow_lazy_open": false,
   "data_counts": {
-    "job_id": "flow3",
+    "job_id": "flow2",
     "processed_record_count": 1033831,
     "processed_field_count": 3201858,
     "input_bytes": 93102826,
@@ -121,7 +121,7 @@
     "latest_bucket_timestamp": 1659987900000
   },
   "model_size_stats": {
-    "job_id": "flow3",
+    "job_id": "flow2",
     "result_type": "model_size_stats",
     "model_bytes": 36900912,
     "peak_model_bytes": 44375878,
@@ -149,7 +149,7 @@
   },
   "state": "closed",
   "timing_stats": {
-    "job_id": "flow3",
+    "job_id": "flow2",
     "bucket_count": 748,
     "total_bucket_processing_time_ms": 3159.9999999999986,
     "minimum_bucket_processing_time_ms": 0,
