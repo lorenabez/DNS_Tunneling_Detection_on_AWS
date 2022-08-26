@@ -1,0 +1,203 @@
+{
+  "job_id": "flow_v2",
+  "job_type": "anomaly_detector",
+  "job_version": "8.3.3",
+  "create_time": 1661456173489,
+  "finished_time": 1661517351656,
+  "model_snapshot_id": "1661517347",
+  "custom_settings": {
+    "created_by": "population-wizard",
+    "custom_urls": []
+  },
+  "datafeed_config": {
+    "datafeed_id": "datafeed-flow_v2",
+    "job_id": "flow_v2",
+    "query_delay": "82191ms",
+    "chunking_config": {
+      "mode": "auto"
+    },
+    "indices_options": {
+      "expand_wildcards": [
+        "open"
+      ],
+      "ignore_unavailable": false,
+      "allow_no_indices": true,
+      "ignore_throttled": true
+    },
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_all": {}
+          }
+        ]
+      }
+    },
+    "indices": [
+      "filebeat-*"
+    ],
+    "scroll_size": 1000,
+    "delayed_data_check_config": {
+      "enabled": true
+    },
+    "state": "stopped",
+    "timing_stats": {
+      "job_id": "flow_v2",
+      "search_count": 9708,
+      "bucket_count": 19204,
+      "total_search_time_ms": 159157,
+      "average_search_time_per_bucket_ms": 8.287700479066862,
+      "exponential_average_search_time_per_hour_ms": 104.31194526130506
+    }
+  },
+  "groups": [
+    "mestrado"
+  ],
+  "description": "",
+  "analysis_config": {
+    "bucket_span": "15m",
+    "detectors": [
+      {
+        "detector_description": "count over \"destination.address\"",
+        "function": "count",
+        "over_field_name": "destination.address",
+        "detector_index": 0
+      },
+      {
+        "detector_description": "high_mean(\"network.bytes\") over \"destination.address\"",
+        "function": "high_mean",
+        "field_name": "network.bytes",
+        "over_field_name": "destination.address",
+        "detector_index": 1
+      },
+      {
+        "detector_description": "high_mean(\"network.packets\") over \"destination.address\"",
+        "function": "high_mean",
+        "field_name": "network.packets",
+        "over_field_name": "destination.address",
+        "detector_index": 2
+      },
+      {
+        "detector_description": "high_mean(\"source.bytes\") over \"destination.address\"",
+        "function": "high_mean",
+        "field_name": "source.bytes",
+        "over_field_name": "destination.address",
+        "detector_index": 3
+      },
+      {
+        "detector_description": "distinct_count(\"destination.port\") over \"destination.address\"",
+        "function": "distinct_count",
+        "field_name": "destination.port",
+        "over_field_name": "destination.address",
+        "detector_index": 4
+      },
+      {
+        "detector_description": "high_count over \"destination.address\"",
+        "function": "high_count",
+        "over_field_name": "destination.address",
+        "detector_index": 5
+      },
+      {
+        "detector_description": "distinct_count(\"related.ip\") over \"destination.address\"",
+        "function": "distinct_count",
+        "field_name": "related.ip",
+        "over_field_name": "destination.address",
+        "detector_index": 6
+      },
+      {
+        "detector_description": "distinct_count(\"source.address\") over \"destination.address\"",
+        "function": "distinct_count",
+        "field_name": "source.address",
+        "over_field_name": "destination.address",
+        "detector_index": 7
+      },
+      {
+        "detector_description": "distinct_count(\"source.port\") over \"destination.address\"",
+        "function": "distinct_count",
+        "field_name": "source.port",
+        "over_field_name": "destination.address",
+        "detector_index": 8
+      }
+    ],
+    "influencers": [
+      "source.address",
+      "destination.port",
+      "destination.address"
+    ],
+    "model_prune_window": "30d"
+  },
+  "analysis_limits": {
+    "model_memory_limit": "400mb",
+    "categorization_examples_limit": 4
+  },
+  "data_description": {
+    "time_field": "@timestamp",
+    "time_format": "epoch_ms"
+  },
+  "model_plot_config": {
+    "enabled": false,
+    "annotations_enabled": false
+  },
+  "model_snapshot_retention_days": 10,
+  "daily_model_snapshot_retention_after_days": 1,
+  "results_index_name": "shared",
+  "allow_lazy_open": false,
+  "data_counts": {
+    "job_id": "flow_v2",
+    "processed_record_count": 9185094,
+    "processed_field_count": 72502112,
+    "input_bytes": 2233128952,
+    "input_field_count": 72502112,
+    "invalid_date_count": 0,
+    "missing_field_count": 978640,
+    "out_of_order_timestamp_count": 0,
+    "empty_bucket_count": 16023,
+    "sparse_bucket_count": 28,
+    "bucket_count": 19204,
+    "earliest_record_timestamp": 1644233676000,
+    "latest_record_timestamp": 1661517091000,
+    "last_data_time": 1661517336422,
+    "latest_empty_bucket_timestamp": 1661508000000,
+    "latest_sparse_bucket_timestamp": 1661443200000,
+    "input_record_count": 9185094,
+    "log_time": 1661517336422,
+    "latest_bucket_timestamp": 1661517000000
+  },
+  "model_size_stats": {
+    "job_id": "flow_v2",
+    "result_type": "model_size_stats",
+    "model_bytes": 85226942,
+    "peak_model_bytes": 697524198,
+    "model_bytes_exceeded": 0,
+    "model_bytes_memory_limit": 419430400,
+    "total_by_field_count": 11,
+    "total_over_field_count": 134100,
+    "total_partition_field_count": 10,
+    "bucket_allocation_failures_count": 0,
+    "memory_status": "ok",
+    "assignment_memory_basis": "current_model_bytes",
+    "categorized_doc_count": 0,
+    "total_category_count": 0,
+    "frequent_category_count": 0,
+    "rare_category_count": 0,
+    "dead_category_count": 0,
+    "failed_category_count": 0,
+    "categorization_status": "ok",
+    "log_time": 1661517347760,
+    "timestamp": 1661516100000
+  },
+  "forecasts_stats": {
+    "total": 0,
+    "forecasted_jobs": 0
+  },
+  "state": "closed",
+  "timing_stats": {
+    "job_id": "flow_v2",
+    "bucket_count": 19205,
+    "total_bucket_processing_time_ms": 482104.99999999953,
+    "minimum_bucket_processing_time_ms": 0,
+    "maximum_bucket_processing_time_ms": 34128,
+    "average_bucket_processing_time_ms": 25.103098151523017,
+    "exponential_average_bucket_processing_time_ms": 106.03825603416041,
+    "exponential_average_bucket_processing_time_per_hour_ms": 1176.9784270008172
+  }
