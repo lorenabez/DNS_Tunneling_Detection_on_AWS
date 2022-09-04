@@ -13,4 +13,6 @@ Describes an architecture for DNS Tunneling detection at AWS cloud envirement, u
   - Iodine
   - Dnscat2
   - DNSExfiltrator
+  - DNSStager
+  - Flighsim
 5. Experiments Results and accurancy
