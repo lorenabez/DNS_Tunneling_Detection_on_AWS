@@ -17,7 +17,7 @@ Describes an architecture for DNS Tunneling detection at AWS cloud envirement, u
   - Flighsim
 5. Experiments Results and accurancy
 
-This project and repesctive improvemments were published on:
+This project and respective improvemments were published on:
 
 English -> "A security model for DNS tunnel detection on cloud platform" https://ieeexplore.ieee.org/abstract/document/9969715
 
