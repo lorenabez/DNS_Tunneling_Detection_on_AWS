@@ -16,6 +16,9 @@ Describes an architecture for DNS Tunneling detection at AWS cloud envirement, u
   - DNSStager
   - Flighsim
 5. Experiments Results and accurancy
+
 This project and repesctive improvemments were published on:
+
 English -> "A security model for DNS tunnel detection on cloud platform" https://ieeexplore.ieee.org/abstract/document/9969715
+
 Portuguese -> "IDENTIFICAÇÃO DE TÚNEIS DNS EM NUVEM COMPUTACIONAL USANDO DETECÇÃO DE ANOMALIAS" https://ciaca-conf.org/wp-content/uploads/2022/11/4_CIACA2022_PT_F_068.pdf
