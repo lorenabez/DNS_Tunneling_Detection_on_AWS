@@ -22,3 +22,5 @@ This project and respective improvemments were published on:
 English -> "A security model for DNS tunnel detection on cloud platform" https://ieeexplore.ieee.org/abstract/document/9969715
 
 Portuguese -> "IDENTIFICAÇÃO DE TÚNEIS DNS EM NUVEM COMPUTACIONAL USANDO DETECÇÃO DE ANOMALIAS" https://ciaca-conf.org/wp-content/uploads/2022/11/4_CIACA2022_PT_F_068.pdf
+
+Revista RISTI -> "Tunelamento DNS: metodologia de detecção para ambiente em nuvem computacional" https://www.risti.xyz/issues/ristie57.pdf
